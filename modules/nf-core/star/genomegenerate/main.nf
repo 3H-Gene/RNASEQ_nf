@@ -1,6 +1,7 @@
 process STAR_GENOMEGENERATE {
     tag "$fasta"
     label 'process_high'
+    disk '40 GB'
 
     conda "bioconda::star=2.7.10a bioconda::samtools=1.16.1 conda-forge::gawk=5.1.0"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
